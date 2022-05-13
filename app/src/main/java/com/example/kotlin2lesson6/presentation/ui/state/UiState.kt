@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson1.presentation.ui.state
+package com.example.kotlin2lesson6.presentation.ui.state
 
 
 sealed class UiState<T> {

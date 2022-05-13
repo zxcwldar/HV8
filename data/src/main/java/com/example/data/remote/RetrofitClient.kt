@@ -31,7 +31,7 @@ class RetrofitClient {
 
 
     companion object {
-        const val BASE_URL = "https://kitsu.io/api/edge/anime"
+        const val BASE_URL = "https://kitsu.io/api/edge/"
     }
 
 
