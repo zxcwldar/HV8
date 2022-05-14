@@ -1,6 +1,6 @@
 package com.example.kotlin2lesson6.di
 
-import com.example.data.repository.AnimeRepositoryImpl
+import com.example.data.repositories.AnimeRepositoryImpl
 import com.example.domain.repositories.AnimeRepository
 import dagger.Binds
 import dagger.Module

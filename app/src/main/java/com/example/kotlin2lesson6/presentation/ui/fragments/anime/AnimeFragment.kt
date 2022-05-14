@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments
+package com.example.kotlin2lesson6.presentation.ui.fragments.anime
 
 import android.util.Log
 import androidx.fragment.app.viewModels

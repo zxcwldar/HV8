@@ -34,7 +34,12 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    //OkHttp
     implementation(libs.bundles.okHttp)
+    //Retrofit
     implementation(libs.bundles.retrofit)
+    //Coroutines
     implementation(libs.coroutines.android)
+    // Paging 3
+    api(libs.paging.paging)
 }

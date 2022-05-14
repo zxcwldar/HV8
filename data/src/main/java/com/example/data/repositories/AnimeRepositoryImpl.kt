@@ -1,8 +1,8 @@
-package com.example.data.repository
+package com.example.data.repositories
 
 import com.example.data.remote.animedtos.toDomain
 import com.example.data.remote.apiservice.AnimeApiService
-import com.example.data.repository.base.BaseRepository
+import com.example.data.repositories.base.BaseRepository
 import com.example.domain.repositories.AnimeRepository
 import javax.inject.Inject
 

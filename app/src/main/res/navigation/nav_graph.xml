@@ -7,7 +7,12 @@
 
     <fragment
         android:id="@+id/animeFragment"
-        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.AnimeFragment"
+        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.anime.AnimeFragment"
         android:label="fragment_anime"
         tools:layout="@layout/fragment_anime" />
+    <fragment
+        android:id="@+id/mangaFragment"
+        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.manga.MangaFragment"
+        android:label="fragment_manga"
+        tools:layout="@layout/fragment_manga" />
 </navigation>

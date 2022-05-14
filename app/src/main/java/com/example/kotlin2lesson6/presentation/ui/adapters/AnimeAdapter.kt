@@ -33,7 +33,7 @@ class AnimeAdapter :
     }
 
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
-        getItem(position)?.let { holder.onBind(it) }
+        getItem(position)?.let {holder.onBind(it) }
 
     }
 
