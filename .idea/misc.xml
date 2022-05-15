@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/drawable/ic_detailed_star.xml" value="0.119" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/drawable/ic_popularity.xml" value="0.119" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/fragment_anime.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/fragment_anime_detailed.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/fragment_manga.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/fragment_manga_detailed.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/item_anime.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Kotlin2Lesson6/app/src/main/res/layout/item_manga.xml" value="0.21784420289855072" />
       </map>

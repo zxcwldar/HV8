@@ -1,7 +1,9 @@
 package com.example.data.remote.apiservice
 
-import com.example.data.remote.animedtos.AnimeDto
+import com.example.data.remote.dtos.anime.AnimeListDto
+import com.example.data.remote.dtos.anime.SingleAnimeDto
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface AnimeApiService {
@@ -9,8 +11,9 @@ interface AnimeApiService {
     suspend fun fetchAnimes(
         @Query("page[limit]") pageLimit: Int,
         @Query("page[offset]") pageOffset: Int,
-    ): AnimeDto
+    ): AnimeListDto
 
     @GET("anime")
-    suspend fun fetchAnime(): AnimeDto
+    suspend fun fetchAnime(@Path("id") id: String): SingleAnimeDto
+
 }

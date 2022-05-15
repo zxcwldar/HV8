@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
 import com.example.kotlin2lesson6.presentation.ui.state.UiState
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 
@@ -45,6 +48,18 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(@L
 
     protected open fun launchObservers() {
 
+    }
+    protected fun <T : Any> Flow<PagingData<T>>.spectatePaging(
+        lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
+        success: suspend (data: PagingData<T>) -> Unit,
+        error: ((error: String) -> Unit)? = null
+    ) {
+        safeFlowGather(lifecycleState) {
+            collectLatest {
+                success(it)
+                error(it)
+            }
+        }
     }
 
     protected fun <T> StateFlow<UiState<T>>.spectateUiState(

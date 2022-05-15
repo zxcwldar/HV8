@@ -1,10 +1,10 @@
 package com.example.domain.repositories
 
 import com.example.domain.either.Either
-import com.example.domain.models.animemodel.AnimeModel
+import com.example.domain.models.anime.SingleAnimeModel
 import kotlinx.coroutines.flow.Flow
 
 interface AnimeRepository {
 
-    fun fetchAnime() : Flow<Either<String, AnimeModel>>
+    fun fetchAnime(id: String): Flow<Either<String, SingleAnimeModel>>
 }
