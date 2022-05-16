@@ -1,14 +1,13 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.manga.detailed
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.manga.detailed
 
 import android.util.Log
-import android.view.Gravity.apply
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson6.R
 import com.example.kotlin2lesson6.base.BaseFragment
-import com.example.kotlin2lesson6.common.extentions.setImage
 import com.example.kotlin2lesson6.databinding.FragmentMangaDetailedBinding
+import com.example.kotlin2lesson6.presentation.extentions.loadImageWithGlide
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -32,8 +31,8 @@ class MangaDetailedFragment :
             success = {
                 binding.apply {
                     it.apply {
-                        imCover.setImage(data.mangaDto.coverImage?.original)
-                        imPoster.setImage(data.mangaDto.posterImage.medium)
+                        imCover.loadImageWithGlide(data.mangaDto.coverImage?.original)
+                        imPoster.loadImageWithGlide(data.mangaDto.posterImage.medium)
                         tvSubtype.text = data.mangaDto.subtype.uppercase()
                         tvYear.text = data.mangaDto.createdAt
                         tvTitle.text = data.mangaDto.titles.en

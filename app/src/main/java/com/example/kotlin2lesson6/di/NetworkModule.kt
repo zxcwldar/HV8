@@ -1,6 +1,6 @@
 package com.example.kotlin2lesson6.di
 
-import com.example.data.remote.RetrofitClient
+import com.example.data.remote.NetworkClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,14 +11,19 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    @Singleton
-    private val retrofitClient = RetrofitClient()
 
     @Singleton
     @Provides
-    fun provideAnimeApiService() = retrofitClient.provideAnimeApiService()
+    fun provideAnimeApiService(networkClient: NetworkClient) =
+        networkClient.provideAnimeApiService()
 
     @Singleton
     @Provides
-    fun provideMangaApiService() = retrofitClient.provideMangaApiService()
+    fun provideMangaApiService(networkClient: NetworkClient) =
+        networkClient.provideMangaApiService()
+
+    @Singleton
+    @Provides
+    fun provideAuthenticationApiService(authenticationClient: NetworkClient.AuthenticationClient) =
+        authenticationClient.provideAuthenticationApiService()
 }

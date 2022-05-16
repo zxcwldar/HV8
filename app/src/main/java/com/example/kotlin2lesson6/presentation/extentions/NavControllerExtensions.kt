@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson1.common.extentions
+package com.example.kotlin2lesson6.presentation.extentions
 
 import androidx.annotation.IdRes
 import androidx.navigation.NavController

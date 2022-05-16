@@ -1,14 +1,13 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.anime
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.anime
 
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.kotlin2lesson1.common.extentions.navigateSafelyUsingDirections
 import com.example.kotlin2lesson6.R
 import com.example.kotlin2lesson6.base.BaseFragment
 import com.example.kotlin2lesson6.databinding.FragmentAnimeBinding
-import com.example.kotlin2lesson6.presentation.exntensions.directionsSafeNavigation
+import com.example.kotlin2lesson6.presentation.extentions.navigateSafelyUsingDirections
 import com.example.kotlin2lesson6.presentation.ui.adapters.AnimeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +36,7 @@ class AnimeFragment  : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layo
     }
 
     private fun onClick(id: String) {
-        findNavController().directionsSafeNavigation(
+        findNavController().navigateSafelyUsingDirections(
             AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailedFragment(
                 id
             )

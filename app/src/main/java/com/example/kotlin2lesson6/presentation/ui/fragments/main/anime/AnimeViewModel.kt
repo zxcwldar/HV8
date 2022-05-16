@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.anime
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.anime
 
 import com.example.data.repositories.AnimeRepositoryImpl
 import com.example.kotlin2lesson6.base.BaseViewModel

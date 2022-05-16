@@ -22,6 +22,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            buildConfigField("String", "MAIN_BASE_URL", "\"https://kitsu.io/api/edge/\"")
+            buildConfigField("String", "AUTH_BASE_URL", "\"https://kitsu.io/api/oauth/\"")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

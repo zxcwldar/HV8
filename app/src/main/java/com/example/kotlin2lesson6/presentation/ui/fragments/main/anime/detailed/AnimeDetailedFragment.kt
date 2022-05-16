@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.anime.detailed
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.anime.detailed
 
 import android.util.Log
 import androidx.fragment.app.viewModels
@@ -6,8 +6,8 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson6.R
 import com.example.kotlin2lesson6.base.BaseFragment
-import com.example.kotlin2lesson6.common.extentions.setImage
 import com.example.kotlin2lesson6.databinding.FragmentAnimeDetailedBinding
+import com.example.kotlin2lesson6.presentation.extentions.loadImageWithGlide
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,8 +32,8 @@ class AnimeDetailedFragment :
             binding.apply {
 
                 it.apply {
-                    imCover.setImage(data.animeDto.coverImage?.original)
-                    imPoster.setImage(data.animeDto.posterImage?.medium)
+                    imCover.loadImageWithGlide(data.animeDto.coverImage?.original)
+                    imPoster.loadImageWithGlide(data.animeDto.posterImage?.medium)
                     tvSubtype.text = data.animeDto.subtype?.uppercase()
                     tvYear.text = data.animeDto.createdAt
                     tvTitle.text = data.animeDto.titles?.en

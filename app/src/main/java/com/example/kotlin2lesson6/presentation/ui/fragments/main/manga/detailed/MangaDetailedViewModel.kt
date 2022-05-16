@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.manga.detailed
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.manga.detailed
 
 import com.example.domain.usecase.FetchMangaUseCase
 import com.example.kotlin2lesson6.base.BaseViewModel

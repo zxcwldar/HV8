@@ -1,4 +1,4 @@
-package com.example.kotlin2lesson6.presentation.ui.fragments.manga
+package com.example.kotlin2lesson6.presentation.ui.fragments.main.manga
 
 import android.util.Log
 import androidx.fragment.app.viewModels
@@ -7,9 +7,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.kotlin2lesson6.R
 import com.example.kotlin2lesson6.base.BaseFragment
 import com.example.kotlin2lesson6.databinding.FragmentMangaBinding
-import com.example.kotlin2lesson6.presentation.exntensions.directionsSafeNavigation
+import com.example.kotlin2lesson6.presentation.extentions.navigateSafelyUsingDirections
 import com.example.kotlin2lesson6.presentation.ui.adapters.MangaAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layout.fragment_manga) {
     override val binding by viewBinding(FragmentMangaBinding::bind)
     override val viewModel: MangaViewModel by viewModels()
@@ -35,7 +37,7 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
     }
 
     private fun onClick(id: String) {
-        findNavController().directionsSafeNavigation(
+        findNavController().navigateSafelyUsingDirections(
             MangaFragmentDirections.actionMangaFragmentToMangaDetailedFragment(
                 id
             )

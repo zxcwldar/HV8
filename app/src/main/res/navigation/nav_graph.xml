@@ -2,47 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/animeFragment">
+    android:id="@+id/nav_graph"
+    tools:navigation="InvalidDestination">
 
     <fragment
-        android:id="@+id/animeDetailedFragment"
-        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.anime.detailed.AnimeDetailedFragment"
-        android:label="fragment_anime_detailed"
-        tools:layout="@layout/fragment_anime_detailed">
-        <argument
-            android:name="animeId"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/animeFragment"
-        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.anime.AnimeFragment"
-        android:label="fragment_anime"
-        tools:layout="@layout/fragment_anime">
+        android:id="@+id/signInFlowFragment"
+        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.authentication.SignInFlowFragment"
+        android:label="SignInFlowFragment">
         <action
-            android:id="@+id/action_animeFragment_to_animeDetailedFragment"
-            app:destination="@id/animeDetailedFragment" />
+            android:id="@+id/action_signInFlowFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mangaFragment"
-        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.manga.MangaFragment"
-        android:label="fragment_manga"
-        tools:layout="@layout/fragment_manga">
-        <argument
-            android:name="mangaId"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_mangaFragment_to_mangaDetailedFragment"
-            app:destination="@id/mangaDetailedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/mangaDetailedFragment"
-        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.manga.detailed.MangaDetailedFragment"
-        android:label="fragment_manga_detailed"
-        tools:layout="@layout/fragment_manga_detailed">
-
-        <argument
-            android:name="mangaId"
-            app:argType="string" />
-    </fragment>
+        android:id="@+id/mainFlowFragment"
+        android:name="com.example.kotlin2lesson6.presentation.ui.fragments.main.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow" />
 </navigation>

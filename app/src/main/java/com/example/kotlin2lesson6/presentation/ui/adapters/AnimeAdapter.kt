@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin2lesson6.base.BaseDiffUtil
-import com.example.kotlin2lesson6.common.extentions.setImage
 import com.example.kotlin2lesson6.databinding.ItemAnimeBinding
+import com.example.kotlin2lesson6.presentation.extentions.loadImageWithGlide
 import com.example.kotlin2lesson6.presentation.models.anime.AnimeDataUI
 
 class AnimeAdapter(
@@ -15,12 +15,14 @@ class AnimeAdapter(
     PagingDataAdapter<AnimeDataUI, AnimeAdapter.AnimeViewHolder>(BaseDiffUtil()) {
     inner class AnimeViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(ui: AnimeDataUI) {
-            binding.imImage.setImage(ui.animeDto.posterImage?.original)
-            binding.root.setOnClickListener {
-                onClick(ui.id)
+        fun onBind(animeDataDto: AnimeDataUI) {
+            binding.imImage.loadImageWithGlide(animeDataDto.animeDto.posterImage?.original)
 
+            binding.root.setOnClickListener {
+                onClick(animeDataDto.id)
             }
+
+
 
 
         }
