@@ -1,5 +1,7 @@
 package com.example.kotlin2lesson6.presentation.ui.fragments.main.anime.detailed
 
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -27,6 +29,10 @@ class AnimeDetailedFragment :
 
     }
 
+    override fun setupListeners() {
+        openYoutubeAnimeTrailer()
+    }
+
     private fun subscribeToAnimeDetailed() {
         viewModel.animeDetailedState.spectateUiState(success = {
             binding.apply {
@@ -51,6 +57,19 @@ class AnimeDetailedFragment :
         }, error = { Log.e("tag", it) }
         )
     }
+    private fun openYoutubeAnimeTrailer() {
+        binding.btnAnimeTrailer.setOnClickListener {
+            this.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("vnd.youtube:${args.videoId}")
+                )
+            )
+        }
+    }
+
+
+
 
 
 }

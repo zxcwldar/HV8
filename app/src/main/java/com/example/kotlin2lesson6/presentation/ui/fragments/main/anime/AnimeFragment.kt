@@ -35,10 +35,10 @@ class AnimeFragment  : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layo
             })
     }
 
-    private fun onClick(id: String) {
+    private fun onClick(id: String , videoId : String?) {
         findNavController().navigateSafelyUsingDirections(
             AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailedFragment(
-                id
+                id, videoId
             )
         )
     }
