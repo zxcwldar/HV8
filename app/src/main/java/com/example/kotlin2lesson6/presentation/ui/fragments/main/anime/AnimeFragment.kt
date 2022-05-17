@@ -12,7 +12,7 @@ import com.example.kotlin2lesson6.presentation.ui.adapters.AnimeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AnimeFragment  : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layout.fragment_anime) {
+class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layout.fragment_anime) {
     override val binding by viewBinding(FragmentAnimeBinding::bind)
     override val viewModel: AnimeViewModel by viewModels()
     private val animeAdapter = AnimeAdapter(this::onClick)
@@ -35,12 +35,22 @@ class AnimeFragment  : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layo
             })
     }
 
-    private fun onClick(id: String , videoId : String?) {
-        findNavController().navigateSafelyUsingDirections(
-            AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailedFragment(
-                id, videoId
+    private fun onClick(id: String, videoId: String? = null) {
+        if (videoId != null)
+            findNavController().navigateSafelyUsingDirections(
+                AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailedFragment(
+                    id, videoId
+                )
             )
-        )
+        else
+            findNavController().navigateSafelyUsingDirections(
+                AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailedFragment(
+                    id,
+                    null
+                )
+            )
+
+
     }
 
 

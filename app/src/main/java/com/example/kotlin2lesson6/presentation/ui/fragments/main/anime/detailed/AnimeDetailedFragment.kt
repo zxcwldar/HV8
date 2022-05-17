@@ -3,6 +3,7 @@ package com.example.kotlin2lesson6.presentation.ui.fragments.main.anime.detailed
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -47,6 +48,10 @@ class AnimeDetailedFragment :
                     tvAverageRating.text = "${data.animeDto.averageRating}%"
                     tvRating.text = "Rank #${data.animeDto.ratingRank}"
                     tvPopularity.text = "Rank #${data.animeDto.popularityRank}"
+                    if(args.videoId != null) {
+                        btnAnimeTrailer.isVisible = true
+                    }
+
 
                 }
 

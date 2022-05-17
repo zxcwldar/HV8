@@ -10,7 +10,7 @@ import com.example.kotlin2lesson6.presentation.extentions.loadImageWithGlide
 import com.example.kotlin2lesson6.presentation.models.anime.AnimeDataUI
 
 class AnimeAdapter(
-    private val onItemClick: (id: String, videoId: String?) -> Unit
+    private val onItemClick: (id: String, videoId: String?) -> Unit,
 ) : PagingDataAdapter<AnimeDataUI, AnimeAdapter.AnimeViewHolder>(BaseDiffUtil()) {
 
 
@@ -34,7 +34,10 @@ class AnimeAdapter(
             binding.imImage.loadImageWithGlide(animeDataDto.animeDto.posterImage?.original)
 
             binding.root.setOnClickListener {
-                onItemClick(animeDataDto.id, animeDataDto.animeDto.youtubeVideoId)
+                if (animeDataDto.animeDto.youtubeVideoId != null)
+                    onItemClick(animeDataDto.id, animeDataDto.animeDto.youtubeVideoId)
+                else onItemClick(animeDataDto.id, null)
+
             }
 
 

@@ -92,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
+        android:visibility="invisible"
         android:backgroundTint="#16a086"
         android:text="Смотреть трейлер"
         app:layout_constraintEnd_toEndOf="parent"
